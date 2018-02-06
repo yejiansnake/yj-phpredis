@@ -10,7 +10,11 @@
 ## 直接调用
 
 ~~~
-public function __construct($name, $seeds, $timeout = null, $readTimeout = null, $persistent = false, $password = null) 
+public function __construct(
+	$name, $seeds, $timeout = null, 
+	$readTimeout = null, 
+	$persistent = false, 
+	$password = null) 
 
 $redis = new \RedisCluster(NULL,
 	$params['seeds'],
@@ -20,7 +24,9 @@ $redis = new \RedisCluster(NULL,
 	empty($params['password']) ? NULL : $params['password']);
 ~~~
 
-## 作为 Session, 在 save_path 中增加一个参数 password 
+## 作为 Session
+
+在 save_path 中增加一个参数 password 
 
 ~~~
 session.save_handler = rediscluster
