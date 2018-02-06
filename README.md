@@ -10,11 +10,13 @@
 ## 直接调用
 
 ~~~
+class RedisCluster {
 public function __construct(
 	$name, $seeds, $timeout = null, 
 	$readTimeout = null, 
 	$persistent = false, 
-	$password = null) 
+	$password = null)
+}	
 
 $redis = new \RedisCluster(NULL,
 	$params['seeds'],
