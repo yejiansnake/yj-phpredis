@@ -8,7 +8,7 @@
 在 php 的 extension 目录增加配置文件 redis.ini, 内容为: extension = redis.so
 
 ## 直接调用
-
+在官方的 RedisCluster 类构造函数增加了一个参数 password
 ~~~
 class RedisCluster {
 public function __construct(
@@ -18,6 +18,9 @@ public function __construct(
 	$password = null)
 }	
 
+~~~
+使用时只需要填入参数即可
+~~~
 $redis = new \RedisCluster(NULL,
 	$params['seeds'],
 	empty($params['timeout']) ? NULL : $params['timeout'],
